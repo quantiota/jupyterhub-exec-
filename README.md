@@ -40,19 +40,31 @@ jh-exec new-kernel
 
 Set via environment variables or a `.env` file in the working or home directory:
 
+**Public JupyterHub (HTTPS — default):**
+```bash
+JH_HOST=hub.example.com
+JH_PORT=443
+JH_USER=agent-01
+JH_TOKEN=your_token_here
+JH_TIMEOUT=600
+```
+
+**Local GPU server (HTTP):**
 ```bash
 JH_HOST=192.168.1.100
 JH_PORT=8000
 JH_USER=agent-01
 JH_TOKEN=your_token_here
+JH_SSL=false
 JH_TIMEOUT=600
 ```
 
 Or pass directly:
 
 ```bash
-jh-exec --host 192.168.1.100 --user agent-01 --token your_token run script.py
+jh-exec --host hub.example.com --port 443 --ssl --user agent-01 --token your_token run script.py
 ```
+
 
 ## Python API
 
@@ -84,6 +96,36 @@ def assign_gpu(spawner):
 
 c.Spawner.pre_spawn_hook = assign_gpu
 ```
+## SSL
+
+HTTPS is enabled by default. For a local GPU server on the same network, disable it:
+
+```bash
+JH_SSL=false
+JH_HOST=192.168.1.100
+JH_PORT=8000
+```
+
+For a public JupyterHub over HTTPS (default):
+
+```bash
+JH_SSL=true
+JH_HOST=hub.example.com
+JH_PORT=443
+```
+
+Or via CLI:
+
+```bash
+jh-exec --ssl --host hub.example.com --port 443 --user agent-01 --token your_token run script.py
+```
+
+
+
+
+
+
+
 ## Benchmark
 
 Validated on NVIDIA GeForce GTX TITAN X via `gpu_demo.py`:
