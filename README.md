@@ -1,7 +1,7 @@
 # jupyterhub-exec
 
 
-Born from an AI agent farm, solving a real infrastructure problem. Execute code on a remote JupyterHub kernel from any terminal — zero external dependencies.
+Born from an [AI agent farm](https://github.com/quantiota/AI-Agent-Farm), solving a real infrastructure problem. Execute code on a remote JupyterHub kernel from any terminal — zero external dependencies.
 
 ```
 pip install jupyterhub-exec
