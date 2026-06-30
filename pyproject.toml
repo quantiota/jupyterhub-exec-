@@ -18,6 +18,11 @@ classifiers = [
     "Topic :: System :: Distributed Computing",
 ]
 
+[project.urls]
+Homepage = "https://github.com/quantiota/jupyterhub-exec"
+Repository = "https://github.com/quantiota/jupyterhub-exec"
+Issues = "https://github.com/quantiota/jupyterhub-exec/issues"
+
 [project.scripts]
 jh-exec = "jh_exec.cli:main"
 
