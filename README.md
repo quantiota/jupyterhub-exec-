@@ -49,7 +49,7 @@ JH_TOKEN=your_token_here
 JH_TIMEOUT=600
 ```
 
-**Local GPU server (HTTP):**
+**Local JupyterHUb (HTTP):**
 ```bash
 JH_HOST=192.168.1.100
 JH_PORT=8000
