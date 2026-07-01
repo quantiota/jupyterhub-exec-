@@ -105,14 +105,14 @@ c.Spawner.pre_spawn_hook = assign_gpu
 Validated on NVIDIA GeForce GTX TITAN X via `gpu_demo.py`:
 
 ```
-  Visible GPUs: 4  torch 2.5.1+cu121
-    [0] NVIDIA GeForce GTX TITAN X  (11.9 GiB)
-    [1] NVIDIA GeForce GTX TITAN X  (11.9 GiB)
-    [2] NVIDIA GeForce GTX TITAN X  (11.9 GiB)
-    [3] NVIDIA GeForce GTX TITAN X  (11.9 GiB)
-  8192x8192 matmul: 233.2 ms  (4.7 TFLOP/s)
-  checksum: 862523.7500
-  allocated: 776 MiB
+Visible GPUs: 4  torch 2.5.1+cu121
+  [0] NVIDIA GeForce GTX TITAN X  (11.9 GiB)
+  [1] NVIDIA GeForce GTX TITAN X  (11.9 GiB)
+  [2] NVIDIA GeForce GTX TITAN X  (11.9 GiB)
+  [3] NVIDIA GeForce GTX TITAN X  (11.9 GiB)
+8192x8192 matmul: 242.1 ms  (4.5 TFLOP/s)
+checksum: -489134.2500
+allocated: 1720 MiB
 ```
 
 
