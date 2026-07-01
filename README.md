@@ -116,16 +116,45 @@ allocated: 1720 MiB
 ```
 
 
-### CPU vs GPU — same script, offloaded (`ml_demo.py`)
+#### CPU vs GPU — same script, offloaded (`ml_demo.py`)
 
 The same MLP-training script, run locally on CPU vs offloaded to the remote GPU kernel — only
-the command changes:
+the command changes.
+
+Local, on CPU:
 
 ```
-$ python3 ml_demo.py            # local — CPU
+$ python3 ml_demo.py
+====================================================
+  Device : CPU
+  torch  : 2.11.0+cu130
+====================================================
+  step   1/30   loss 1.0095
+  step  10/30   loss 0.9030
+  step  20/30   loss 0.7048
+  step  30/30   loss 0.5562
+----------------------------------------------------
+  30 steps in 35.45s   (0.8 steps/s)
+====================================================
 >>> ran on CPU in 35.45s  (0.8 steps/s)
+```
 
-$ jh-exec run ml_demo.py        # remote — GPU kernel
+Offloaded to the remote GPU kernel:
+
+```
+$ jh-exec run ml_demo.py
+====================================================
+  Device : NVIDIA GeForce GTX TITAN X
+  torch  : 2.5.1+cu121
+====================================================
+  step   1/30   loss 1.0114
+  step  10/30   loss 0.8923
+  step  20/30   loss 0.6796
+  step  30/30   loss 0.4982
+----------------------------------------------------
+  30 steps in 0.86s   (34.9 steps/s)
+  GPU memory used: 1008 MiB
+====================================================
 >>> ran on NVIDIA GeForce GTX TITAN X in 0.86s  (34.9 steps/s)
 ```
 
