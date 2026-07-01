@@ -115,6 +115,23 @@ Validated on NVIDIA GeForce GTX TITAN X via `gpu_demo.py`:
   allocated: 776 MiB
 ```
 
+
+### CPU vs GPU — same script, offloaded (`ml_demo.py`)
+
+The same MLP-training script, run locally on CPU vs offloaded to the remote GPU kernel — only
+the command changes:
+
+```
+$ python3 ml_demo.py            # local — CPU
+>>> ran on CPU in 35.45s  (0.8 steps/s)
+
+$ jh-exec run ml_demo.py        # remote — GPU kernel
+>>> ran on NVIDIA GeForce GTX TITAN X in 0.86s  (34.9 steps/s)
+```
+
+**~41× faster**, zero code change, zero local GPU — a CPU-only terminal offloading real
+training to a remote GPU it doesn't have.
+
 Full GPU offload from a Claude Code terminal — zero local GPU, zero dependencies.
 
 
