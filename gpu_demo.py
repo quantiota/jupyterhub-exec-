@@ -2,8 +2,8 @@
 """
 gpu_demo.py — small GPU workload, meant to run on the remote JupyterHub kernel.
 
-Run it on the GPU box via the offload harness:
-    /opt/venv/bin/python3 jh_exec.py gpu_demo.py
+Run it on the remote GPU kernel via jupyterhub-exec:
+    jh-exec run gpu_demo.py
 
 It reports the visible GPU(s) and runs a matrix multiply on the device to
 prove compute actually lands on the GPU.
@@ -46,3 +46,7 @@ def main():
     print(f"{n}x{n} matmul: {ms:.1f} ms  ({tflops:.1f} TFLOP/s)")
     print(f"checksum: {c.sum().item():.4f}")
     print(f"allocated: {torch.cuda.memory_allocated(dev) / 1024**2:.0f} MiB")
+
+
+if __name__ == "__main__":
+    main()
